@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background-primary text-text-primary font-sans antialiased overflow-x-hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-background-card backdrop-blur-xl border border-border;
+  }
+  
+  .btn-gradient {
+    @apply bg-gradient-primary hover:shadow-glow-primary transition-all duration-200 ease-in-out font-medium text-white px-4 py-2 rounded-lg flex items-center justify-center;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-accent hover:shadow-glow-accent transition-all duration-200 ease-in-out font-medium text-white px-4 py-2 rounded-lg flex items-center justify-center;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-white/10 transition-all duration-200 ease-in-out font-medium text-white px-4 py-2 rounded-lg flex items-center justify-center border border-white/10;
+  }
+  
+  .input-glass {
+    @apply bg-background-secondary border border-border rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:border-primary-from focus:ring-1 focus:ring-primary-from transition-all placeholder:text-text-muted;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-primary;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full transition-all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-text-muted;
+}
+
+/* Base styles for scrollbar on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a #0d0d0d;
+}
